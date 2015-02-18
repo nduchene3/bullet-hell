@@ -10,6 +10,6 @@ This is a basic "bullet hell" style game implemented in C++ using the SFML libra
 
 ## Controls
 
-*Spacebar - Shoot player projectile
-*Arrow keys - Move player
-*Return - Restarts game
+* Spacebar - Shoot player projectile
+* Arrow keys - Move player
+* Return - Restarts game
