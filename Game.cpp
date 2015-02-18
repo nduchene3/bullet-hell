@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "Background.h"
-#include "Player.h"
+#include "Environment/Background.h"
+#include "Player/Player.h"
 #include "Projectile.h"
-#include "BasicEnemy.h"
-#include "EnemyProjectile.h"
+#include "Enemies/BasicEnemy.h"
+#include "Enemies/EnemyProjectile.h"
 
 void Game::Start()
 {

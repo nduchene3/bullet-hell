@@ -1,5 +1,5 @@
 #pragma once
-#include "VisibleGameObject.h"
+#include "../VisibleGameObject.h"
 
 class Player : public VisibleGameObject
 {

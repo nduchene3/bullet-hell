@@ -1,6 +1,5 @@
 #pragma once
-#include "stdafx.h"
-#include "VisibleGameObject.h"
+#include "../VisibleGameObject.h"
 
 class EnemyProjectile : public VisibleGameObject
 {

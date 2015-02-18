@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Player.h"
-#include "Game.h"
+#include "../Game.h"
 
 Player::Player() :
 _velocity(600.f),

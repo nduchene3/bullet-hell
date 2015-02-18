@@ -85,25 +85,25 @@
     <Text Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Background.h" />
-    <ClInclude Include="BasicEnemy.h" />
-    <ClInclude Include="EnemyProjectile.h" />
+    <ClInclude Include="Environment\Background.h" />
+    <ClInclude Include="Enemies\BasicEnemy.h" />
+    <ClInclude Include="Enemies\EnemyProjectile.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObjectManager.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="VisibleGameObject.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Background.cpp" />
-    <ClCompile Include="BasicEnemy.cpp" />
+    <ClCompile Include="Environment\Background.cpp" />
+    <ClCompile Include="Enemies\BasicEnemy.cpp" />
     <ClCompile Include="BulletHell.cpp" />
-    <ClCompile Include="EnemyProjectile.cpp" />
+    <ClCompile Include="Enemies\EnemyProjectile.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player\Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

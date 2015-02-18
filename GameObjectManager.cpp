@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "GameObjectManager.h"
 #include "Game.h"
-#include "Player.h"
+#include "Player/Player.h"
 
 
 GameObjectManager::GameObjectManager()

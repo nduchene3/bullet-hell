@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "EnemyProjectile.h"
-#include "Player.h"
-#include "Game.h"
+#include "../Player/Player.h"
+#include "../Game.h"
 
 EnemyProjectile::EnemyProjectile() :
 _velocity(500.f)

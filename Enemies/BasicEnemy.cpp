@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "BasicEnemy.h"
-#include "Game.h"
+#include "../Game.h"
 #include "EnemyProjectile.h"
-#include "Player.h"
+#include "../Player/Player.h"
 
 BasicEnemy::BasicEnemy() :
 _velocity(200.f),

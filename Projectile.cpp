@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Projectile.h"
-#include "BasicEnemy.h"
+#include "Enemies/BasicEnemy.h"
 #include "Game.h"
 
 Projectile::Projectile() :
