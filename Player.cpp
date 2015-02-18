@@ -108,3 +108,8 @@ void Player::ResetStartingPosition()
 
 	SetPosition(returnVector.x, returnVector.y);
 }
+
+bool Player::ShouldPersist() const
+{
+	return true;
+}

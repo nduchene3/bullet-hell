@@ -30,17 +30,6 @@ void GameObjectManager::Remove(std::string name)
 
 void GameObjectManager::Reset()
 {
-	/*
-	typedef std::map<std::string, VisibleGameObject*>::iterator it_type;
-
-	for (it_type iterator = _gameObjects.begin();
-	iterator != _gameObjects.end();
-	iterator = _gameObjects.erase(iterator))
-	{
-	delete iterator->second;
-	}
-	*/
-
 	auto iterator = _gameObjects.begin();
 	while (iterator != _gameObjects.end())
 	{
@@ -50,10 +39,7 @@ void GameObjectManager::Reset()
 			player->ResetStartingPosition();
 		}
 
-		if (iterator->first != "bg1" 
-			&& iterator->first != "bg2" 
-			&& iterator->first != "bg4" 
-			&& iterator->first != "player")
+		if (!iterator->second->ShouldPersist())
 		{
 			delete iterator->second;
 			iterator = _gameObjects.erase(iterator);

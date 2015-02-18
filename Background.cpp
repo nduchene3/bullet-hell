@@ -48,5 +48,9 @@ void Background::Update(float elapsedTime)
 void Background::Draw(sf::RenderWindow &rw)
 {
 	VisibleGameObject::Draw(rw);
+}
 
+bool Background::ShouldPersist() const
+{
+	return true;
 }

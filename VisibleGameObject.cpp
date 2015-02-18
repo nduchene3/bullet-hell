@@ -92,5 +92,10 @@ sf::FloatRect VisibleGameObject::GetBoundingRect() const
 	return _sprite.getGlobalBounds();
 }
 
+bool VisibleGameObject::ShouldPersist() const
+{
+	return false;
+}
+
 
 std::map<std::string, sf::Texture> VisibleGameObject::_images;

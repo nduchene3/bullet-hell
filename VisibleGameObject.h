@@ -19,6 +19,8 @@ public:
 	virtual sf::Rect<float> GetBoundingRect() const;
 	virtual bool IsLoaded() const;
 
+	virtual bool ShouldPersist() const;
+
 
 protected:
 	sf::Sprite& GetSprite();
