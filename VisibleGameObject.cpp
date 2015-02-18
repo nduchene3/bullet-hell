@@ -16,6 +16,7 @@ void VisibleGameObject::Load(std::string filename)
 {
 	filename = "textures/" + filename;
 
+	//implementing a basic image caching algorithim.
 	auto iter = _images.find(filename);
 	if (iter == _images.end())
 	{
@@ -97,5 +98,5 @@ bool VisibleGameObject::ShouldPersist() const
 	return false;
 }
 
-
+//the basic image cache
 std::map<std::string, sf::Texture> VisibleGameObject::_images;

@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "Environment/Background.h"
 #include "Player/Player.h"
-#include "Projectile.h"
+#include "Player/Projectile.h"
 #include "Enemies/BasicEnemy.h"
 #include "Enemies/EnemyProjectile.h"
 
@@ -10,6 +10,8 @@ void Game::Start()
 {
 	_mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Bullet Hell");
 
+	//the multiple backgrounds with different size particles
+	//moving at different speeds helps create a paralax effect.
 	Background *background1 = new Background(1);
 	background1->SetPosition(0.f, -768.f);
 	_gameObjectManager.Add("bg1", background1);
@@ -22,6 +24,7 @@ void Game::Start()
 	background4->SetPosition(0.f, -768.f);
 	_gameObjectManager.Add("bg4", background4);
 
+	//Initialize the player.
 	Player *player = new Player();
 	player->ResetStartingPosition();
 	_gameObjectManager.Add("player", player);
