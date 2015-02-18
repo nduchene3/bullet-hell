@@ -8,7 +8,7 @@ BasicEnemy::BasicEnemy() :
 _velocity(200.f),
 _timeBetweenShots(0.f)
 {
-	Load("ship.png");
+	Load("basicenemy.png");
 	assert(IsLoaded());
 }
 

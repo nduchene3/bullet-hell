@@ -6,7 +6,7 @@
 EnemyProjectile::EnemyProjectile() :
 _velocity(500.f)
 {
-	Load("laserbeam.png");
+	Load("redlaserbeam.png");
 	assert(IsLoaded());
 }
 
