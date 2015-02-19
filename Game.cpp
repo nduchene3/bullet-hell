@@ -5,6 +5,8 @@
 #include "Player/Projectile.h"
 #include "Enemies/BasicEnemy.h"
 #include "Enemies/EnemyProjectile.h"
+#include "HUD/MainHUD.h"
+#include "HUD/GameOverHUD.h"
 
 void Game::Start()
 {
@@ -29,6 +31,12 @@ void Game::Start()
 	player->ResetStartingPosition();
 	_gameObjectManager.Add("player", player);
 
+	MainHUD *hud = new MainHUD();
+	_gameObjectManager.Add("hud", hud);
+
+	GameOverHUD *gameOver = new GameOverHUD();
+	_gameObjectManager.Add("gameover", gameOver);
+
 	while (!IsExiting())
 	{
 		GameLoop();
@@ -52,8 +60,12 @@ void Game::GameLoop()
 		auto player = dynamic_cast<Player*>(_gameObjectManager.Get("player"));
 		if (player->IsPlayerHit())
 		{
+			//toggle game over text
+			auto gameOverHUD = dynamic_cast<GameOverHUD*>(_gameObjectManager.Get("gameover"));
+			gameOverHUD->ToggleVisiblity(true);
+			
+
 			_gameState = Game::GameOver;
-			return;
 		}
 
 		if (currentEvent.type == sf::Event::KeyPressed)
@@ -162,7 +174,6 @@ void Game::GameLoop()
 				_mainWindow.display();
 
 				_gameState = GameState::Playing;
-				
 			}
 
 			//if it is the escape key, we exit the program.
@@ -172,14 +183,14 @@ void Game::GameLoop()
 				_mainWindow.setView(view);
 				_gameState = Game::Exiting;
 			}
-		}
 
-
+		} 
+		
 		//did the player press the "X" in the upper right corner
 		if (currentEvent.type == sf::Event::Closed)
 		{
 			_gameState = Game::Exiting;
-		}
+		}	
 		break;
 	} //end switch
 }

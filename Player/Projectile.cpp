@@ -2,6 +2,7 @@
 #include "Projectile.h"
 #include "../Enemies/BasicEnemy.h"
 #include "../Game.h"
+#include "../HUD/MainHUD.h"
 
 Projectile::Projectile() :
 _velocity(500.f),
@@ -38,6 +39,10 @@ void Projectile::Update(float elapsedTime)
 			{
 				Game::GetGameObjectManager().Remove(item.first);
 				_shouldDestroy = true;
+
+				//increment score
+				auto hud = dynamic_cast<MainHUD*>(Game::GetGameObjectManager().Get("hud"));
+				hud->IncrementScore();
 			}
 		}
 	}

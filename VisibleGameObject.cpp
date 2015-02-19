@@ -3,7 +3,9 @@
 #include "Game.h"
 
 
-VisibleGameObject::VisibleGameObject() :_isLoaded(false)
+VisibleGameObject::VisibleGameObject() :
+_isLoaded(false),
+_shouldDraw(true)
 {
 }
 
@@ -30,7 +32,7 @@ void VisibleGameObject::Load(std::string filename)
 		auto img = _images.insert(std::pair<std::string, sf::Texture>(filename, texture)).first;
 		std::cout << filename + ": loaded from file and added to cache." << std::endl;
 		_sprite.setTexture(img->second);
-		_isLoaded = true;		
+		_isLoaded = true;
 	}
 	else
 	{
@@ -44,7 +46,10 @@ void VisibleGameObject::Load(std::string filename)
 
 void VisibleGameObject::Draw(sf::RenderWindow & renderWindow)
 {
-	renderWindow.draw(_sprite);
+	if (_shouldDraw)
+	{
+		renderWindow.draw(_sprite);
+	}
 }
 
 void VisibleGameObject::Update(float elapsedTime)
@@ -96,6 +101,16 @@ sf::FloatRect VisibleGameObject::GetBoundingRect() const
 bool VisibleGameObject::ShouldPersist() const
 {
 	return false;
+}
+
+bool VisibleGameObject::ShouldDraw() const
+{
+	return _shouldDraw;
+}
+
+void VisibleGameObject::ToggleVisiblity(bool isVisible)
+{
+	_shouldDraw = isVisible;
 }
 
 //the basic image cache

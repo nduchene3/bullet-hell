@@ -20,14 +20,18 @@ public:
 	virtual bool IsLoaded() const;
 
 	virtual bool ShouldPersist() const;
+	virtual void ToggleVisiblity(bool isVisible);
+	virtual bool ShouldDraw() const;
 
 
 protected:
 	sf::Sprite& GetSprite();
+	
 
 private:
 	sf::Sprite  _sprite;
 	std::string _imageKey;
-	bool _isLoaded;
+	bool _isLoaded;	
+	bool _shouldDraw;
 	static std::map<std::string, sf::Texture> _images;
 };

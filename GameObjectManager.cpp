@@ -2,6 +2,8 @@
 #include "GameObjectManager.h"
 #include "Game.h"
 #include "Player/Player.h"
+#include "HUD/GameOverHUD.h"
+#include "HUD/MainHUD.h"
 
 
 GameObjectManager::GameObjectManager()
@@ -37,6 +39,18 @@ void GameObjectManager::Reset()
 		{
 			auto player = dynamic_cast<Player*>(iterator->second);
 			player->ResetStartingPosition();
+		}
+
+		if (iterator->first == "gameover")
+		{
+			auto go = dynamic_cast<GameOverHUD*>(iterator->second);
+			go->ToggleVisiblity(false);
+		}
+
+		if (iterator->first == "hud")
+		{
+			auto mainHUD = dynamic_cast<MainHUD*>(iterator->second);
+			mainHUD->ResetScore();
 		}
 
 		if (!iterator->second->ShouldPersist())
