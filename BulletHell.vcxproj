@@ -92,6 +92,7 @@
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="HUD\GameOverHUD.h" />
     <ClInclude Include="HUD\MainHUD.h" />
+    <ClInclude Include="Player\DualLaser.h" />
     <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Player\Projectile.h" />
     <ClInclude Include="stdafx.h" />
@@ -107,6 +108,7 @@
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="HUD\GameOverHUD.cpp" />
     <ClCompile Include="HUD\MainHUD.cpp" />
+    <ClCompile Include="Player\DualLaser.cpp" />
     <ClCompile Include="Player\Player.cpp" />
     <ClCompile Include="Player\Projectile.cpp" />
     <ClCompile Include="stdafx.cpp">

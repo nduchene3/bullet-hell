@@ -51,6 +51,9 @@
     <ClInclude Include="HUD\GameOverHUD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Player\DualLaser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="HUD\GameOverHUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\DualLaser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

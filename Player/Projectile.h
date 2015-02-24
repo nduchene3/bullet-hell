@@ -11,8 +11,12 @@ public:
 	void Draw(sf::RenderWindow &rw);
 
 	bool Destroy();
+
+protected:
+	bool shouldDestroy;
+
 private:
-	float _velocity;
 	float _timeBetweenShots;
-	bool _shouldDestroy;
+	float _velocity;
+
 };

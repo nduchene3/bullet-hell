@@ -7,6 +7,7 @@
 #include "Enemies/EnemyProjectile.h"
 #include "HUD/MainHUD.h"
 #include "HUD/GameOverHUD.h"
+#include "Player/DualLaser.h"
 
 void Game::Start()
 {
@@ -62,8 +63,7 @@ void Game::GameLoop()
 		{
 			//toggle game over text
 			auto gameOverHUD = dynamic_cast<GameOverHUD*>(_gameObjectManager.Get("gameover"));
-			gameOverHUD->ToggleVisiblity(true);
-			
+			gameOverHUD->ToggleVisiblity(true);		
 
 			_gameState = Game::GameOver;
 		}
@@ -76,9 +76,12 @@ void Game::GameLoop()
 				std::cout << "fire" << std::endl;
 				auto player = _gameObjectManager.Get("player");
 				
-				Projectile *bullet = new Projectile();
-				bullet->SetPosition(player->GetPosition().x + (player->GetWidth() / 2) - (bullet->GetWidth() / 2), player->GetPosition().y);
+			/*	Projectile *bullet = new Projectile();
+				bullet->SetPosition(player->GetPosition().x + (player->GetWidth() / 2) - (bullet->GetWidth() / 2), player->GetPosition().y);*/
 
+				DualLaser *bullet = new DualLaser();
+				bullet->SetPosition(player->GetPosition().x + (player->GetWidth() / 2) - (bullet->GetWidth() / 2), player->GetPosition().y);
+				
 				std::string key = "bullet_" + std::to_string(rand());
 				_gameObjectManager.Add(key, bullet);
 			}

@@ -7,7 +7,7 @@
 Projectile::Projectile() :
 _velocity(500.f),
 _timeBetweenShots(1.f),
-_shouldDestroy(false)
+shouldDestroy(false)
 {
 	Load("playerlaserbeam.png");
 	assert(IsLoaded());
@@ -38,7 +38,7 @@ void Projectile::Update(float elapsedTime)
 			if (enemy->GetBoundingRect().contains(GetSprite().getPosition()))
 			{
 				Game::GetGameObjectManager().Remove(item.first);
-				_shouldDestroy = true;
+				shouldDestroy = true;
 
 				//increment score
 				auto hud = dynamic_cast<MainHUD*>(Game::GetGameObjectManager().Get("hud"));
@@ -50,6 +50,6 @@ void Projectile::Update(float elapsedTime)
 
 bool Projectile::Destroy()
 {
-	return _shouldDestroy;
+	return shouldDestroy;
 }
 
